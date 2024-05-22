@@ -1,0 +1,22 @@
+
+function sayHello(event) {
+    alert('Hello ' + event.target.className);
+}
+
+// Assigned function to onclick property
+// Works for single element and replaces exisitng eventHandler
+// Not best practice
+//document.getElementsByClassName("btn").onclick = sayHello();
+
+//Works for multiple elements
+document.getElementsByClassName('btn').addEventListener("click" , sayHello());
+
+// `getElementsByClassName returns an HTMLCollection, which is an array-like object. To use addEventListener, you need to iterate over the collection and add the event listener to each element individually.
+
+//var btnElements = document.getElementsByClassName('btn');
+//for (var i = 0; i < btnElements.length; i++) {
+//    btnElements[i].addEventListener("click", sayHello);
+//}
+
+// Unlike getElementsByClassName and getElementsByTagName, getElementById only returns a single element, not a collection.
+// When using getElementById, you can directly assign a function to the onclick property or use addEventListener 
